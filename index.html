@@ -55,7 +55,7 @@
     <script>
         // --- CONFIGURATION ---
         const MQTT_BROKER = "broker.hivemq.com";
-        const MQTT_PORT = 8000; // WebSocket Port
+        const MQTT_PORT = 8884; // WebSocket Port
         const MQTT_TOPIC = "iot_pro_77/sensors/data"; // MUST MATCH ESP8266 TOPIC
         const CLIENT_ID = "web_client_" + Math.floor(Math.random() * 10000);
 
@@ -95,7 +95,7 @@
             client.subscribe(MQTT_TOPIC);
         };
 
-        client.connect({ onSuccess: onConnect, useSSL: false });
+        client.connect({ onSuccess: onConnect, useSSL: true });
     </script>
 </body>
 </html>
